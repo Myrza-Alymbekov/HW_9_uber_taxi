@@ -47,10 +47,11 @@ class OrderRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
         )
 
 
-# class StatusDriverViewSet(viewsets.ModelViewSet):
-#     queryset = StatusDriver.objects.all()
-#     serializer_class = StatusDriverSerializer
-#     permission_classes = [IsAuthenticated, IsClientOrReadOnly]
-#
-#     def perform_create(self, serializer):
-#         serializer.save(profile=self.request.user.profile)
+class StatusDriverViewSet(viewsets.ModelViewSet):
+    queryset = StatusDriver.objects.all()
+    serializer_class = StatusDriverSerializer
+    permission_classes = [IsAuthenticated, IsClientOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(profile=self.request.user.profile)
+

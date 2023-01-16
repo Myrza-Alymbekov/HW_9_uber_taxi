@@ -24,5 +24,5 @@ class StatusDriverSerializer(serializers.ModelSerializer):
     class Meta:
         model = StatusDriver
         fields = '__all__'
-        read_only_fields = ['profile', 'taxi']
+        read_only_fields = ['profile']
 
